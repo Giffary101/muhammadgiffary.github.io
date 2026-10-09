@@ -1,9 +1,57 @@
+import { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Projects from './components/Projects';
 import Skills from './components/Skills';
 import Footer from './components/Footer'
 
 function App() {
+ // --- Logika Efek Mengetik Berulang (Infinite Typewriter) ---
+  const teksPenuh = "Merakit Solusi Digital Berkinerja.";
+  const [teksTampil, setTeksTampil] = useState("");
+  const [isMenghapus, setIsMenghapus] = useState(false);
+
+  useEffect(() => {
+    let timer;
+
+    // 1. Jika teks sudah penuh, jeda 2 detik lalu mulai menghapus
+    if (!isMenghapus && teksTampil === teksPenuh) {
+      timer = setTimeout(() => setIsMenghapus(true), 2000);
+    } 
+    // 2. Jika teks sudah habis terhapus, jeda sebentar lalu mulai mengetik lagi
+    else if (isMenghapus && teksTampil === "") {
+      timer = setTimeout(() => setIsMenghapus(false), 500);
+    } 
+    // 3. Proses mengetik atau menghapus huruf demi huruf
+    else {
+      timer = setTimeout(() => {
+        setTeksTampil(
+          isMenghapus 
+            ? teksPenuh.substring(0, teksTampil.length - 1) // Mode hapus
+            : teksPenuh.substring(0, teksTampil.length + 1) // Mode ketik
+        );
+      }, isMenghapus ? 50 : 120); // Kecepatan: Hapus 50ms, Ketik 120ms
+    }
+
+    return () => clearTimeout(timer);
+  }, [teksTampil, isMenghapus]);
+
+  // Memecah teks secara dinamis agar <br> tetap berfungsi
+  const renderTeksKetik = () => {
+    const batasKata = "Digital";
+    const posisiBatas = teksTampil.indexOf(batasKata);
+    
+    if (posisiBatas !== -1) {
+      return (
+        <>
+          {teksTampil.slice(0, posisiBatas)}
+          <br className="hidden lg:block"/>
+          {teksTampil.slice(posisiBatas)}
+        </>
+      );
+    }
+    return teksTampil;
+  };
+
   return (
     <div className="min-h-screen bg-slate-950 font-sans text-slate-200">
       <Navbar />
@@ -19,11 +67,9 @@ function App() {
             
             {/* Sisi Kiri: Tipografi dan CTA (Ukuran teks diturunkan) */}
             <div className="flex-1 text-center lg:text-left">
-              <div className="inline-block px-4 py-1.5 mb-5 rounded-full border border-blue-500/30 bg-blue-500/10 text-cyan-400 font-medium text-xs tracking-wide">
-                Menerima Klien Baru
-              </div>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-transparent bg-clip-text bg-linear-to-r from-cyan-400 via-blue-500 to-indigo-500 pb-2 leading-tight">
-                Merakit Solusi <br className="hidden lg:block"/> Digital Berkinerja.
+             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 dark:text-transparent dark:bg-clip-text dark:bg-linear-to-r dark:from-cyan-400 dark:via-blue-500 dark:to-indigo-500 pb-2 leading-tight min-h-30 lg:min-h-0">
+                {renderTeksKetik()}
+                <span className="animate-pulse text-cyan-500 dark:text-cyan-400 font-light ml-1">|</span>
               </h1>
               <p className="mt-5 text-slate-400 text-base sm:text-lg max-w-xl mx-auto lg:mx-0 leading-relaxed">
                 Saya membangun antarmuka web modern, responsif, dan terukur menggunakan React dan ekosistem arsitektur JavaScript terkini. Mari wujudkan ide Anda menjadi aplikasi yang fungsional.
