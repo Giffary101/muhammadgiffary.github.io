@@ -10,7 +10,7 @@ const Skills = () => {
   const [scrollLeft, setScrollLeft] = useState(0);
 
   useEffect(() => {
-    fetch('/data.json')
+    fetch('./data.json')
       .then((res) => res.json())
       .then((data) => setCategories(data.skills || []))
       .catch((err) => console.error("Gagal memuat keahlian:", err));

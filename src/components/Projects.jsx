@@ -10,7 +10,7 @@ const Projects = () => {
   const [scrollLeft, setScrollLeft] = useState(0);
 
   useEffect(() => {
-    fetch('/data.json')
+    fetch('./data.json')
       .then((res) => res.json())
       .then((data) => setProjects(data.projects || []))
       .catch((err) => console.error("Gagal memuat proyek:", err));
