@@ -1,0 +1,54 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "title": "Sistem Manajemen Sesi Web",
+      "description": "Arsitektur web terintegrasi dengan mekanisme penyimpanan status (state) pengguna dan pengatur waktu keluar otomatis untuk keamanan tingkat tinggi.",
+      "techStack": ["React.js", "Node.js", "Tailwind"],
+      "link": "#"
+    },
+    {
+      "id": 2,
+      "title": "Dasbor Metrik Likuiditas",
+      "description": "Antarmuka analitik yang melacak volume pool dan tren pasar ekosistem desentralisasi secara real-time, memberikan visualisasi data yang presisi.",
+      "techStack": ["JavaScript", "API", "CSS Variables"],
+      "link": "#"
+    },
+    {
+      "id": 3,
+      "title": "Klon UI Dokumen Elektronik",
+      "description": "Bedah kode dan rekonstruksi tata letak antarmuka aplikasi tanda tangan digital dengan fokus pada keseimbangan spasial dan perataan elemen asimetris.",
+      "techStack": ["HTML", "Tailwind", "Figma"],
+      "link": "#"
+    },
+    {
+      "id": 4,
+      "title": "Aplikasi E-Commerce Kustom",
+      "description": "Membangun toko online responsif yang mendukung katalog produk, pencarian real-time, serta checkout belanja tanpa hambatan.",
+      "techStack": ["React.js", "Tailwind", "Redux"],
+      "link": "#"
+    }
+  ],
+  "skills": [
+    {
+      "title": "Frontend Development",
+      "description": "Membangun antarmuka pengguna yang responsif, interaktif, dan berkinerja tinggi.",
+      "items": ["React.js", "Vite", "JavaScript (ES6+)", "Tailwind CSS", "HTML5 & CSS3", "Framer Motion"]
+    },
+    {
+      "title": "Backend & Alat bantu",
+      "description": "Mengelola logika server, database, serta alur kerja pengembangan.",
+      "items": ["Node.js", "Express.js", "RESTful API", "Git & GitHub", "npm", "Postman"]
+    },
+    {
+      "title": "Desain & Prototyping",
+      "description": "Menerjemahkan ide visual menjadi cetak biru sebelum masuk ke tahap pengkodean.",
+      "items": ["Figma", "UI/UX Design", "Wireframing", "Visual Hierarchy", "Responsive Design"]
+    },
+    {
+      "title": "Manajemen Sistem",
+      "description": "Mengoperasikan sistem manajemen versi, pemeliharaan repositori, dan arsitektur deployment.",
+      "items": ["Linux", "Terminal", "CI/CD", "Vercel", "GitHub Pages"]
+    }
+  ]
+}
