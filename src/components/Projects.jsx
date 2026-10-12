@@ -66,7 +66,7 @@ const Projects = () => {
           
           <button 
             onClick={() => scroll('left')}
-            className="absolute left-2 md:-left-4 top-1/2 -translate-y-1/2 z-20 p-3.5 rounded-full bg-slate-900/50 backdrop-blur-md border border-white/10 text-white hover:bg-slate-800/80 hover:border-cyan-500/50 hover:text-cyan-400 transition-all duration-300 shadow-[0_4px_20px_rgba(0,0,0,0.4)]"
+            className="hidden md:block absolute left-2 md:-left-4 top-1/2 -translate-y-1/2 z-20 p-3.5 rounded-full bg-slate-900/50 backdrop-blur-md border border-white/10 text-white hover:bg-slate-800/80 hover:border-cyan-500/50 hover:text-cyan-400 transition-all duration-300 shadow-[0_4px_20px_rgba(0,0,0,0.4)]"
           >
             <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M15 19l-7-7 7-7" />
@@ -75,7 +75,7 @@ const Projects = () => {
 
           <button 
             onClick={() => scroll('right')}
-            className="absolute right-2 md:-right-4 top-1/2 -translate-y-1/2 z-20 p-3.5 rounded-full bg-slate-900/50 backdrop-blur-md border border-white/10 text-white hover:bg-slate-800/80 hover:border-cyan-500/50 hover:text-cyan-400 transition-all duration-300 shadow-[0_4px_20px_rgba(0,0,0,0.4)]"
+            className="hidden md:block absolute right-2 md:-right-4 top-1/2 -translate-y-1/2 z-20 p-3.5 rounded-full bg-slate-900/50 backdrop-blur-md border border-white/10 text-white hover:bg-slate-800/80 hover:border-cyan-500/50 hover:text-cyan-400 transition-all duration-300 shadow-[0_4px_20px_rgba(0,0,0,0.4)]"
           >
             <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7" />
