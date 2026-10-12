@@ -67,7 +67,7 @@ function App() {
             
             {/* Sisi Kiri: Tipografi dan CTA (Ukuran teks diturunkan) */}
             <div className="flex-1 text-center lg:text-left">
-             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 dark:text-transparent dark:bg-clip-text dark:bg-linear-to-r dark:from-cyan-400 dark:via-blue-500 dark:to-indigo-500 pb-2 leading-tight min-h-30 lg:min-h-0">
+             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-transparent bg-clip-text bg-linear-to-r from-cyan-400 via-blue-500 to-indigo-500 pb-2 leading-tight min-h-30 lg:min-h-0">
                 {renderTeksKetik()}
                 <span className="animate-pulse text-cyan-500 dark:text-cyan-400 font-light ml-1">|</span>
               </h1>
