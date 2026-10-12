@@ -98,11 +98,11 @@ const Navbar = () => {
               </a>
             ))}
             <a 
-              href="/cv-portofolio.pdf" 
-              download="CV_Portofolio.pdf"
+              href="./cv_portofolio.html" 
+              target="_blank" 
               className="block mt-6 px-3 py-3 rounded-lg text-center font-bold text-white bg-blue-600 hover:bg-blue-700 shadow-lg"
             >
-              Unduh CV
+              Lihat CV
             </a>
           </div>
         </div>
