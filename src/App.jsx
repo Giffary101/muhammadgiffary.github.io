@@ -95,16 +95,16 @@ function App() {
 
             {/* Sisi Kanan: Tempat Gambar (Dimensi maksimal diperkecil) */}
             <div className="flex-1 relative w-full max-w-[16rem] sm:max-w-xs lg:max-w-sm">
-              
-              {/* Ornamen Pendaran di Belakang Gambar */}
-              <div className="absolute -inset-1 bg-linear-to-tr from-cyan-400 to-blue-600 rounded-4xl blur opacity-40 animate-pulse"></div>
-              
-              {/* Kanvas Gambar Utama */}
-              <div className="relative aspect-square rounded-[1.8rem] bg-slate-900 border border-slate-700/50 overflow-hidden flex items-center justify-center group shadow-2xl transition-transform duration-500 hover:scale-[1.02]">
+                          
+           {/* Kanvas Gambar Utama */}
+              <div className="relative w-full aspect-video flex items-center justify-center group transition-transform duration-500">
                 
-                <span className="text-slate-500 text-sm font-medium group-hover:text-cyan-400 transition-colors px-6 text-center">
-                  [ Ganti dengan tag &lt;img&gt; Anda nanti ]
-                </span>
+                {/* Gambar Saturnus yang Diperbesar Paksa dengan Scale */}
+                <img 
+                  src="./saturnus.jpg" 
+                  alt="Planet Saturnus Close Up" 
+                  className="relative z-10 w-full h-full object-cover scale-[1.3] lg:scale-[1.6] group-hover:scale-[1.7] transition-transform duration-1000 mask-[radial-gradient(ellipse,black_30%,transparent_65%)]"
+                />
 
               </div>
             </div>

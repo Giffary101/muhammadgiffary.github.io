@@ -41,7 +41,7 @@ const Navbar = () => {
           
           <div className="shrink-0 cursor-pointer">
             <span className="text-2xl font-bold text-transparent bg-clip-text bg-linear-to-r from-cyan-400 to-blue-500">
-              Portofolio.
+              Muhammad Giffary
             </span>
           </div>
 
@@ -59,11 +59,12 @@ const Navbar = () => {
 
           <div className="hidden md:flex">
             <a 
-              href="/cv-portofolio.pdf" 
-              download="CV_Portofolio.pdf"
-              className="px-6 py-2.5 rounded-full font-semibold text-white bg-blue-600 hover:bg-blue-700 transition-all duration-300 shadow-[0_0_15px_rgba(37,99,235,0.4)] hover:shadow-[0_0_25px_rgba(37,99,235,0.7)] hover:-translate-y-1"
+            href="./cv_portofolio.html" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="inline-flex items-center px-6 py-3 border-2 border-cyan-500/50 text-cyan-400 font-semibold rounded-lg hover:bg-cyan-500/10 transition-all duration-300"
             >
-              Unduh CV
+              Lihat CV
             </a>
           </div>
 

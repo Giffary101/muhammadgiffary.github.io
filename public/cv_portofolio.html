@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curriculum Vitae - Muhammad Giffary</title>
+    <!-- Menggunakan font sans-serif modern yang mirip dengan referensi -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --header-bg: #3a3b3f;
+            --header-text: #ffffff;
+            --sidebar-bg: #e6dfd8;
+            --main-bg: #ffffff;
+            --text-main: #333333;
+            --text-muted: #666666;
+            --accent-color: #2c3e50;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        body {
+            background-color: #f0f0f0;
+            color: var(--text-main);
+            line-height: 1.6;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .resume-container {
+            width: 100%;
+            max-width: 800px;
+            background-color: var(--main-bg);
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+            /* Tambahan untuk membuat layout mengisi penuh tinggi kertas */
+            display: flex;
+            flex-direction: column;
+            min-height: 297mm; /* Tinggi standar kertas A4 */
+        }
+
+        /* Header Styles */
+        .header {
+            background-color: var(--header-bg);
+            color: var(--header-text);
+            padding: 40px;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        /* Segitiga di bawah header menunjuk ke sidebar */
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 10%; /* Menyesuaikan posisi segitiga dengan foto */
+            width: 0;
+            height: 0;
+            border-left: 50px solid transparent;
+            border-right: 50px solid transparent;
+            border-top: 20px solid var(--header-bg);
+            z-index: 10;
+        }
+
+        .profile-pic-container {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background-color: #ffd700;
+            margin-right: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        /* Gaya untuk gambar profil agar presisi di dalam lingkaran */
+        .profile-pic-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .header-info h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+        }
+
+        .header-info h2 {
+            font-size: 1.2rem;
+            font-weight: 300;
+            color: #d1d1d1;
+        }
+
+        /* Body Layout Styles */
+        .resume-body {
+            display: flex;
+            flex-grow: 1; /* Akan secara otomatis mengisi sisa ruang ke bawah */
+        }
+
+        /* Sidebar Styles */
+        .sidebar {
+            width: 35%;
+            background-color: var(--sidebar-bg);
+            padding: 40px 30px;
+            padding-top: 60px; /* Ruang ekstra untuk segitiga header */
+        }
+
+        .sidebar-section {
+            margin-bottom: 40px;
+        }
+
+        .sidebar h3 {
+            font-size: 1.2rem;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .contact-list {
+            list-style: none;
+        }
+
+        .contact-list li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+            color: var(--text-main);
+            word-break: break-word; /* Mencegah teks email menembus background */
+        }
+
+        .contact-icon {
+            width: 20px;
+            height: 20px;
+            background-color: var(--accent-color);
+            color: white;
+            border-radius: 50%;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 10px;
+            font-size: 0.7rem;
+            flex-shrink: 0;
+        }
+
+        .education-item {
+            margin-bottom: 15px;
+        }
+
+        .education-item h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+            position: relative;
+        }
+        
+        /* Indikator titik untuk pendidikan */
+        .education-item h4::before {
+            content: '•';
+            position: absolute;
+            left: -15px;
+            color: var(--text-main);
+        }
+
+        .education-item p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .skills-list {
+            list-style: none;
+        }
+
+        .skills-list li {
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 15px; /* Memberikan ruang untuk tanda strip */
+        }
+
+        /* Menambahkan bullet point berbentuk strip (-) */
+        .skills-list li::before {
+            content: '-';
+            position: absolute;
+            left: 0;
+            color: var(--text-main);
+        }
+
+        /* Main Content Styles */
+        .main-content {
+            width: 65%;
+            padding: 40px;
+            padding-top: 60px;
+        }
+
+        .main-section {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-size: 1.4rem;
+            color: var(--text-main);
+            font-weight: 600;
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid var(--text-main);
+        }
+
+        .summary-text {
+            font-size: 0.95rem;
+            text-align: justify;
+            color: var(--text-main);
+        }
+
+        .experience-item {
+            margin-bottom: 25px;
+        }
+
+        .experience-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .experience-date {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 10px;
+            font-style: italic;
+        }
+
+        .experience-details {
+            list-style-type: disc;
+            margin-left: 20px;
+            font-size: 0.95rem;
+            color: var(--text-main);
+        }
+
+        .experience-details li {
+            margin-bottom: 5px;
+        }
+
+        /* Tombol Cetak (Tidak terlihat saat print) */
+        .print-btn-container {
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .btn-print {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin: 0 5px;
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 600;
+        }
+
+        .btn-print:hover {
+            background-color: #1a252f;
+        }
+
+        @media print {
+            html, body {
+                /* Perintah ini memaksa browser mencetak background color */
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                background-color: white;
+                margin: 0 !important;
+                padding: 0 !important;
+                width: 100%;
+                height: 100%;
+            }
+            .resume-container {
+                box-shadow: none;
+                max-width: 100%;
+                width: 100%;
+                min-height: 100vh; /* Pastikan mengambil tinggi penuh kertas saat cetak */
+            }
+            /* Menyembunyikan tombol saat print/save as PDF */
+            .print-btn-container {
+                display: none;
+            }
+            /* Menghapus margin halaman bawaan browser agar layout full page tanpa tepi putih */
+            @page {
+                margin: 0mm;
+                size: A4 portrait;
+            }
+            /* Menyesuaikan sedikit margin internal untuk cetak */
+            .header { padding: 30px 40px; }
+            .sidebar { padding-top: 50px; }
+            .main-content { padding-top: 50px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Container utama untuk struktur keseluruhan -->
+    <div>
+        <div class="print-btn-container">
+            <button class="btn-print" onclick="window.print()">Download PDF</button>
+            <!-- Tautan untuk kembali ke halaman utama React (Portofolio) -->
+            <a href="./index.html" class="btn-print" style="text-decoration: none; display: inline-block; background-color: #3a3b3f;">Kembali ke Portofolio</a>
+        </div>
+
+        <div class="resume-container" id="resume-content">
+            <header class="header">
+                <div class="profile-pic-container">
+                    <!-- Menggunakan foto profil lokal yang diberikan -->
+                    <img src="6319020117018219531.jpg" alt="Foto Profil Muhammad Giffary">
+                </div>
+                <div class="header-info">
+                    <h1>Muhammad Giffary</h1>
+                    <h2>Web Developer</h2>
+                </div>
+            </header>
+
+            <div class="resume-body">
+                <aside class="sidebar">
+                    <div class="sidebar-section">
+                        <h3>Detail Kontak</h3>
+                        <ul class="contact-list">
+                            <li>
+                                <span class="contact-icon">✉</span>
+                                muhammadgiffary606@gmail.com
+                            </li>
+                            <li>
+                                <span class="contact-icon">📍</span>
+                                Koja, Jakarta Utara
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-section">
+                        <h3>Pendidikan</h3>
+                        <div class="education-item">
+                            <h4>Sistem Informasi</h4>
+                            <p>Universitas Terbuka</p>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-section">
+                        <h3>Keterampilan</h3>
+                        <ul class="skills-list">
+                            <li>Outsystems - Ahli</li>
+                            <li>Web Developer (HTML, CSS, JS) - Menengah</li>
+                        </ul>
+                    </div>
+                </aside>
+
+                <main class="main-content">
+                    
+                    <section class="main-section">
+                        <h2 class="section-title">Ringkasan</h2>
+                        <p class="summary-text">
+                            Web Developer profesional dengan pengalaman 3 tahun berfokus pada platform Outsystems dan arsitektur pengembangan web. Memiliki keahlian ganda sebagai pengembang perangkat lunak dan pelatih teknis (trainer) yang handal dalam menyusun kurikulum, memudahkan peserta untuk memahami alur kerja dan penggunaan <i>tools</i> perusahaan secara efektif.
+                        </p>
+                    </section>
+
+                    <section class="main-section">
+                        <h2 class="section-title">Pengalaman Kerja</h2>
+                        
+                        <!-- Pengalaman 1: Outsystems Developer / Trainer -->
+                        <div class="experience-item">
+                            <div class="experience-title">Outsystems Developer & Trainer, PT Perkasa Pilar Utama</div>
+                            <div class="experience-date">2023 - 2026</div>
+                            <ul class="experience-details">
+                                <li>Bertindak sebagai pelatih (trainer) utama untuk memfasilitasi program pelatihan berbasis Outsystems bagi berbagai klien korporat.</li>
+                                <li>Berhasil merancang dan menyelenggarakan pelatihan untuk institusi terkemuka, termasuk Bank Central Asia (BCA), Govokasi, dan CSUL Finance.</li>
+                                <li>Mengelola dan mengarahkan program <i>Training New Employee</i> secara internal di PT Perkasa Pilar Utama, memastikan karyawan baru siap berkontribusi secara efisien.</li>
+                            </ul>
+                        </div>
+
+                        <!-- Pengalaman 2: Outsystems Developer / Project -->
+                        <div class="experience-item">
+                            <div class="experience-title">Outsystems Developer, PT Perkasa Pilar Utama</div>
+                            <div class="experience-date">2023 - 2026</div>
+                            <ul class="experience-details">
+                                <li>Terlibat dalam pengembangan dan pemeliharaan proyek <i>HR Integration Systems</i> (HRIS) internal milik PT Perkasa Pilar Utama, meningkatkan efisiensi operasional sumber daya manusia.</li>
+                                <li>Diberi tanggung jawab untuk mengembangkan proyek <i>Tax Case Management</i> untuk klien skala besar, PT British American Tobacco, memastikan kepatuhan dan keakuratan sistem pengelolaan pajak.</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <!-- Bagian Referensi (Dikosongkan sesuai permintaan namun struktur dipertahankan) -->
+                    <section class="main-section">
+                        <h2 class="section-title">Referensi</h2>
+                        <p class="summary-text" style="font-style: italic;">
+                            Referensi tersedia atas permintaan.
+                        </p>
+                    </section>
+
+                </main>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

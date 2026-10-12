@@ -2,7 +2,7 @@
   "projects": [
     {
       "id": 1,
-      "title": "Sistem Manajemen Sesi Web",
+      "title": "Outsystems Developer",
       "description": "Arsitektur web terintegrasi dengan mekanisme penyimpanan status (state) pengguna dan pengatur waktu keluar otomatis untuk keamanan tingkat tinggi.",
       "techStack": ["React.js", "Node.js", "Tailwind"],
       "link": "#"
@@ -31,24 +31,19 @@
   ],
   "skills": [
     {
-      "title": "Frontend Development",
-      "description": "Membangun antarmuka pengguna yang responsif, interaktif, dan berkinerja tinggi.",
-      "items": ["React.js", "Vite", "JavaScript (ES6+)", "Tailwind CSS", "HTML5 & CSS3", "Framer Motion"]
+      "title": "Outsystems Developer",
+      "description": "Merancang dan mengembangkan aplikasi skala enterprise yang tangguh, terukur (scalable), dan efisien menggunakan arsitektur low-code OutSystems.",
+      "items": ["SQL", "Logical Thinking", "Javascript", "CSS"]
     },
     {
-      "title": "Backend & Alat bantu",
-      "description": "Mengelola logika server, database, serta alur kerja pengembangan.",
-      "items": ["Node.js", "Express.js", "RESTful API", "Git & GitHub", "npm", "Postman"]
+      "title": "Front End",
+      "description": "Menerjemahkan ide desain menjadi antarmuka web interaktif yang responsif, estetis, dan menyajikan pengalaman pengguna (UX) yang mulus.",
+      "items": ["Javascript", "React.Js", "CSS", "Bootstrap", "Vite.Js"]
     },
     {
-      "title": "Desain & Prototyping",
-      "description": "Menerjemahkan ide visual menjadi cetak biru sebelum masuk ke tahap pengkodean.",
-      "items": ["Figma", "UI/UX Design", "Wireframing", "Visual Hierarchy", "Responsive Design"]
-    },
-    {
-      "title": "Manajemen Sistem",
-      "description": "Mengoperasikan sistem manajemen versi, pemeliharaan repositori, dan arsitektur deployment.",
-      "items": ["Linux", "Terminal", "CI/CD", "Vercel", "GitHub Pages"]
+      "title": "Back End",
+      "description": "Membangun fondasi server, manajemen basis data, dan logika API yang aman untuk memastikan kelancaran dan keandalan sistem di balik layar.",
+      "items": ["Node J.S", "SQLite", "RestFulAPI"]
     }
   ]
 }
