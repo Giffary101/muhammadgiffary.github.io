@@ -72,7 +72,7 @@ function App() {
                 <span className="animate-pulse text-cyan-500 dark:text-cyan-400 font-light ml-1">|</span>
               </h1>
               <p className="mt-5 text-slate-400 text-base sm:text-lg max-w-xl mx-auto lg:mx-0 leading-relaxed">
-                Saya membangun antarmuka web modern, responsif, dan terukur menggunakan React dan ekosistem arsitektur JavaScript terkini. Mari wujudkan ide Anda menjadi aplikasi yang fungsional.
+                Saya membangun antarmuka web modern, responsif, dan terukur menggunakan ekosistem arsitektur JavaScript terkini. Mari wujudkan ide Anda menjadi aplikasi yang fungsional.
               </p>
               
               <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
