@@ -6,7 +6,7 @@ import Footer from './components/Footer'
 
 function App() {
  // --- Logika Efek Mengetik Berulang (Infinite Typewriter) ---
-  const teksPenuh = "Selamat Datang di Halaman Portofolio Ini";
+  const teksPenuh = "Selamat Datang";
   const [teksTampil, setTeksTampil] = useState("");
   const [isMenghapus, setIsMenghapus] = useState(false);
 
